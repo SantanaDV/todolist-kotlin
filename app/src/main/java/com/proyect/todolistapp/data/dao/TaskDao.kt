@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.proyect.todolistapp.data.model.Tasks
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface TaskDao {
@@ -19,7 +20,7 @@ interface TaskDao {
     suspend fun delete(task: Tasks)
 
     @Query("SELECT * FROM tasks")
-    suspend fun getAll(): List<Tasks>
+    suspend fun getAll(): Flow<List<Tasks>>
 
     @Update
     suspend fun updateATask(task: Tasks)
