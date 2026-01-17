@@ -1,12 +1,12 @@
 package com.proyect.todolistapp.utils
 
-import androidx.room.TypeConverters
+import androidx.room.TypeConverter
 import java.time.LocalDate
 
 class Converters {
-    @TypeConverters
+    @TypeConverter
     fun localDateToString(value: LocalDate?): String? = value?.toString()
 
-    @TypeConverters
+    @TypeConverter
     fun stringToLocalDate(value: String?): LocalDate? = LocalDate.parse(value)
 }
