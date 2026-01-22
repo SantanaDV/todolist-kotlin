@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -55,6 +56,9 @@ dependencies {
     val room_version = "2.8.4"
     implementation("androidx.room:room-runtime:$room_version")
     ksp("androidx.room:room-compiler:$room_version")
+    implementation("com.google.dagger:hilt-android:2.57.1")
+    ksp("com.google.dagger:hilt-android-compiler:2.57.1")
+
     // If this project uses any Kotlin source, use Kotlin Symbol Processing (KSP)
     // See Add the KSP plugin to your project
 }
