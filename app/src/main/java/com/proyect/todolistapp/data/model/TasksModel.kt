@@ -3,7 +3,7 @@ package com.proyect.todolistapp.data.model
 import java.time.LocalDate
 
 data class TasksModel(
-    val id: Int,
+    val id: Int = 0,
     val title: String?,
     val description: String?,
     val startedDate: LocalDate?,
@@ -11,7 +11,7 @@ data class TasksModel(
     val isCompleted: Boolean = false,
 ) {
     constructor(
-        id: Int,
+        id: Int = 0,
         title: String,
         description: String,
     ) : this(

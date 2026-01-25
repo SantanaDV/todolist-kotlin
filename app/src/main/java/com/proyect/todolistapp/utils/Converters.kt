@@ -8,5 +8,5 @@ class Converters {
     fun localDateToString(value: LocalDate?): String? = value?.toString()
 
     @TypeConverter
-    fun stringToLocalDate(value: String?): LocalDate? = LocalDate.parse(value)
+    fun stringToLocalDate(value: String?): LocalDate? = value?.let { LocalDate.parse(it) }
 }

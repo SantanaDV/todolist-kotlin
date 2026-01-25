@@ -21,5 +21,5 @@ interface TaskDao {
     fun getAll(): Flow<List<TasksEntity>>
 
     @Update
-    fun updateATask(task: TasksEntity)
+    suspend fun updateATask(task: TasksEntity)
 }
