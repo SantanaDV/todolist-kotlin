@@ -26,5 +26,5 @@ class TasksRepository
 
         suspend fun updateATask(task: TasksModel) = taskDao.updateATask(task.toEntity())
 
-        suspend fun updateIsCompleted(task: TasksModel) = taskDao.updateIsCompleted(task.id)
+        suspend fun updateIsCompleted(task: TasksModel) = taskDao.updateIsCompleted(task.id, task.isCompleted)
     }

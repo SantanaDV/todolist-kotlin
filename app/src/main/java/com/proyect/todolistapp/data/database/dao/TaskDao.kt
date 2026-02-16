@@ -23,6 +23,9 @@ interface TaskDao {
     @Update
     suspend fun updateATask(task: TasksEntity)
 
-    @Query("UPDATE tasks_table SET isCompleted = true WHERE id = :id ")
-    suspend fun updateIsCompleted(id: Int)
+    @Query("UPDATE tasks_table SET isCompleted = :isChecked WHERE id = :id ")
+    suspend fun updateIsCompleted(
+        id: Int,
+        isChecked: Boolean,
+    )
 }
