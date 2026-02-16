@@ -11,11 +11,9 @@ data class TasksModel(
     val isCompleted: Boolean = false,
 ) {
     constructor(
-        id: Int = 0,
         title: String,
         description: String,
     ) : this(
-        id = id,
         title = title,
         description = description,
         startedDate = @Suppress("ktlint:standard:max-line-length")
