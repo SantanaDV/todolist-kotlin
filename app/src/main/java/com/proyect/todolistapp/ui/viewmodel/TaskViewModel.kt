@@ -51,4 +51,13 @@ class TaskViewModel
                 repository.updateATask(task)
             }
         }
+
+        fun onTaskCheckedChange(
+            task: TasksModel,
+            isChecked: Boolean,
+        ) {
+            viewModelScope.launch {
+                repository.updateIsCompleted(task.copy(isCompleted = isChecked))
+            }
+        }
     }
